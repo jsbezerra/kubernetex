@@ -7,6 +7,6 @@ hadolint Dockerfile
 
 mix format --check-formatted
 
-mix credo
+mix credo --strict
 
 mix test
