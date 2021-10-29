@@ -3,6 +3,8 @@
 # exit when any command fails
 set -e
 
+hadolint Dockerfile
+
 mix format --check-formatted
 
 mix credo

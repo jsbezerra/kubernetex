@@ -4,26 +4,12 @@ ARG BUILD_ENV=prod
 ARG BUILD_REL=kubernetex
 
 # Add sources
-ADD . /workspace/
+COPY . /workspace/
 WORKDIR /workspace
-
-# Install system dependencies
-RUN mix local.hex --force
-RUN mix local.rebar --force
 
 ENV MIX_ENV=${BUILD_ENV}
 
-# Fetch dependencies
-RUN mix deps.get
-
-# Build project
-RUN mix compile
-
-# Run test-suite
-RUN mix test --cover
-
-# Build release
-RUN mix release
+RUN mix local.hex --force && mix local.rebar --force && mix deps.get && mix compile && mix test --cover && mix release
 
 FROM alpine:latest AS runner
 
