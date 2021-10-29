@@ -1,5 +1,7 @@
 # Kubernetex
 
+[![Elixir CI](https://github.com/jsbezerra/kubernetex/actions/workflows/test.yml/badge.svg)](https://github.com/jsbezerra/kubernetex/actions/workflows/test.yml)
+
 **TODO: Add description**
 
 ## Installation
